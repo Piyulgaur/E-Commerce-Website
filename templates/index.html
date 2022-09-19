@@ -1,3 +1,5 @@
+ {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,37 +9,120 @@
     <title>CrafterOni</title>
 
     <title>Crafter Oni</title>
-    <!-- Bootstrap CSS -->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <!-- Font awesome link -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 
     <!-- CSS Link -->
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Sancreek Font link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sancreek">
     
 </head>
 
+<body>  
+    <header class="header">
+        <nav class="navbar sticky">
+          <span class="logo" style=" font-family: Sancreek "><a href="">CrafterOni</a></span>
+          
+          <ul class="nav_links">
+            
+            <li>
+              <form class="search" action="">
+                <input type="search" placeholder="Search here..." required>
+                <button type="submit">Search</button>
+              </form>   
+            </li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a class="" href="#"> <i class="fa-solid fa-bag-shopping"></i> </a></li>
+            <li><a class="" href="#"> <i class="fa-solid fa-user"></i> </a></li>
+          
+          </ul>
 
-
-<body>
-    <header>
-      <img class="logo" src="https://nl.followersnet.com/wp-content/uploads/2019/10/Instagram.png">
-      <nav class="navbar">
-        <ul class="nav_links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">search</a></li>
-        </ul>
-      </nav>
-      
-      <a class="" href="#">cart
-      </a>
-      <div></div>
-      <a class="cta" href="#">profile</a>
+        </nav>
     </header>
-  
+    
+    <div class="slider">
+      <div class="slide active">
+        <img src="1.jpg" alt="">
+        <div class="info">
+          <h2>Winter Mountains</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="2.jpg" alt="">
+        <div class="info">
+          <h2>Tropical Desert</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="3.jpg" alt="">
+        <div class="info">
+          <h2>Steaming Volcanoes</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="4.jpg" alt="">
+        <div class="info">
+          <h2>Mountain River</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="5.jpg" alt="">
+        <div class="info">
+          <h2>Egypt Pyramids</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+    </div>
+
+    <footer  class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3 id="footer-h3">Useful links</h3>
+                    <ul id="footer-ul">
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>About</li>
+                    </ul>
+                </div>
+                <div class="footer-col-2">
+                    <h3 id="footer-h3">Follow Us</h3>
+                    <ul class="social-icons" id="footer-ul">
+                        <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"> facebook</i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa-brands fa-twitter">  Twitter</i></a></li>
+                        <li><a class="pinterest" href="#"><i class="fa-brands fa-pinterest">  pinterest</i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa-brands fa-linkedin">  linkedin</i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="cright">Copyright 2022 All Right Reserved</p>
+        </div>
+    </footer>
+
 </body>
 </html>
