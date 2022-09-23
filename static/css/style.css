@@ -1,19 +1,22 @@
+body{
+  background-image: linear-gradient(to right, #9525b2, #7d32b2, #653aaf, #4c3eab, #3041a4);
 
+}
 
 nav{
   margin: 10px 25px;
   border-radius: 30px;
-  background-color: rgba(160, 88, 227,0.5);
+  background-color: rgba(21, 21, 21, 0.6);
   flex: 1;
   text-align:  right;
 }
 
 .logo{
-  font-size: 24px;
+  font-size: 29px;
 }
 
 .logo a{
-  color: rgb(60, 20, 98);
+  color: #d739fe;
   
 }
 
@@ -38,12 +41,16 @@ nav ul li {
   display: inline-block;
   margin-right: 10px;
   margin-top: 10px;
+  color: #9525b2
 }
 
 a{
   text-decoration: none;
-  color: #555;
+  color: #b5b5b5
 }
+
+
+
 
 
 
@@ -89,6 +96,8 @@ a{
 ul{
   list-style-type: none;
 }
+
+
 
 
 /*  
