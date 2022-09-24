@@ -1,13 +1,14 @@
-$(document).ready(function() {
- 
-    $("#owl-demo").owlCarousel({
-   
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
-   
-        items : 3,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
-   
-    });
-   
-  });
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
