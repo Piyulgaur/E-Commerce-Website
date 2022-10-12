@@ -27,7 +27,6 @@ nav{
 
 .logo a{
   color: #d739fe;
-  
 }
 
 .navbar{
@@ -35,8 +34,8 @@ nav{
   display: flex;
   align-items: center;
   padding: 0px;
-  padding-left: 5%;
-  padding-right: 7%;
+  padding-left: 50px;
+  padding-right: 50px;
   
 }
 
@@ -235,7 +234,7 @@ ul{
 .col-3 p{
   font-size: 12px;
   margin: 12px 0;
-  color: #777;
+  
 }
 
 .testimonial .col-3 h3{

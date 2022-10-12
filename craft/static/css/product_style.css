@@ -1,0 +1,20 @@
+.side-nav{
+    width: 15%;
+    border: blue solid 2px;
+}
+
+.main-list{
+    width: 70%;
+    border: blue solid 2px;
+}
+
+.product-box{
+    display: flex;
+    margin: 20px 50px;
+    border: blue solid 2px;
+    justify-content: space-around;
+}
+
+.side-nav .category .list-header{
+    background-color: brown;
+}
