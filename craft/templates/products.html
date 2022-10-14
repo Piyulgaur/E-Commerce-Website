@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% include "header.html" %}
 
 <div class="product-box">
 
@@ -47,16 +45,24 @@
     <!-- main product display-->
     <div class="main-list">
         <div class="row px-3">
+            
+            {% for product in products %}
+
             <div class='col-md-4 mb-2'>
                 <div class='card'>
                     <img class='card-img-top' src='./admin_area/product_images/$product_image1' alt='Card image cap'>
                         <div class='card-body'>
-                                <h5 class='card-title'>$product_title</h5>                                    <p class='card-text'>$product_desc</p>
+                                <h5 class='card-title'>product_title</h5>                                    
+                                <p class='card-text'>product_desc</p>
                                 <a href='#' class='btn btn-primary'>Add to cart</a>
                                 <a href='#' class='btn btn-secondary'>View More</a>
                         </div>
-                 </div>
-             </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+
+        
         </div>
     </div>
 
@@ -64,4 +70,4 @@
 
 
 
-{% endblock  %}
+{% include "footer.html" %}

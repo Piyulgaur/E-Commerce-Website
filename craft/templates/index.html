@@ -1,68 +1,83 @@
-{% extends "base.html" %}
+{% include "header.html" %}
+{% load static %}
 
-{% block content %}
 
-<!-- SLIDE SHOW SECTION -->
+<!------------------------------ SLIDE SHOW SECTION ------------------------------------------>
 
 <div class="container">
-
-    <div class="slideshow-container">
-
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 3</div>
-          <img src="img1.jpg" style="width:100%">
-          <div class="text">Caption Text</div>
-        </div>
-      
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
-          <img src="img2.jpg" style="width:100%">
-          <div class="text">Caption Two</div>
-        </div>
-      
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 3</div>
-          <img src="img3.jpg" style="width:100%">
-          <div class="text">Caption Three</div>
-        </div>
-      
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-      <br>
-      
-      <!-- The dots/circles -->
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-
+    <img name="slide" width="100%" height="550px" />
 </div>
 
 
-<!-- LATEST PRODUCT INTRO-->
+<!------------------------------------ SLIDE SHOW SECTION ENDS------------------------------------------>
+
+<hr id="line">
+
+<!------------------------------------ LATEST PRODUCT INTRO------------------------------------------------>
 
 <div class="container offer">
   <div class="small-container">
       <div class="row">
-          <div class="col-6">
-              <img src="images/Album explosion box 1.jpg" alt="img" class="offer-image">
+          <div class="col-6 m-auto">
+              <img src="{% static 'img/ct2.jpg' %}" alt="img" class="offer-image" >
           </div>
-          <div class="col-6">
+          <div class="col-6 m-auto">
               <p>Now Avialabe for order</p>
               <h1>Album Explosion Box</h1>
-              <small>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long      established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+              <small>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long  established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </small>
           </div>
       </div>
   </div>
 </div>
 
+<!------------------------------- end latest product ----------------------------------->
 
-<!-- testimonials -->
+
+<hr id="line">
+
+<!------------------------------- LATEST 3 PRODUCT ----------------------------------->
+
+{% for prd in products  %}
+     <div class='product-card'>
+      <div class='main-images'>
+      <a href='#' ><img  class=' active' src="{{prd.img1.url}}"></a>
+      </div>
+      <div class='product-details'>
+        <br>
+        <span class='product_name'><a href='#' >{{ prd.name }}</a></span>
+        <div class='stars'>
+          
+          <i class='bx bxs-star' ></i>
+          <i class='bx bxs-star' ></i>
+          <i class='bx bxs-star' ></i>
+          <i class='bx bxs-star' ></i>
+          <i class='bx bx-star' ></i>
+        </div>
+      </div>
+      <div class='color-price'>
+        <div class='color-option'>
+          <span class='color'>Price:</span>
+        </div>
+        <div class='price'>
+          <span class='price_num'>{{ prd.price }}</span>
+        </div>
+      </div>
+      <div class='button'>
+        <div class='button-layer'></div>
+        
+        <a href ='#'><button >View Item </button></a>
+        
+      </div>
+    </div>
+    
+    {% endfor %}
+
+<!------------------------------- end latest 3 prod ----------------------------------->
+
+<hr id="line">
+
+<!------------------------------- testimonials ----------------------------------->
 
 <div class="container">
 
@@ -115,4 +130,4 @@
 </div>
 
    
-{% endblock %}   
+{% include "footer.html" %}

@@ -1,0 +1,43 @@
+{% include "header.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+  
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign Up </h2>
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="name" class="fadeIn second" name="name" placeholder="Enter Name">
+        <input type="text" id="name" class="fadeIn second" name="name" placeholder="Enter Phone Number">
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="Enter Email">
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="Enter Password">
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="Confirm Password">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="Address">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="Pincode">
+        <input type="submit" class="fadeIn fourth" value="Sign Up">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="/login">Already a Member? Login</a>
+      </div>
+  
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+{% include "footer.html" %}

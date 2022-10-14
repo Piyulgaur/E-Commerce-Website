@@ -2,9 +2,9 @@ from distutils.command.upload import upload
 from django.db import models
 import datetime
 
-# Create your models here.
+# Category Model
 class Category(models.Model):
-    name=models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     def __str__(self):
         return self.name
 
@@ -22,19 +22,18 @@ class Category(models.Model):
     def get_cat_by_id(c_id):
         if c_id:
             return Category.objects.filter(id=c_id)
-  
 
-
+# Product Model 
 class Product(models.Model):
-    name=models.CharField(max_length=200)
-    price=models.IntegerField()
-    img1=models.ImageField(null=True,blank=True,upload_to='product/')
-    img2=models.ImageField(null=True,blank=True,upload_to='product/')
-    img3=models.ImageField(null=True,blank=True,upload_to='product/')
-    category=models.ForeignKey(Category,on_delete=models.CASCADE,default=1)
-    desc=models.CharField(max_length=500,default='',null=True,blank=True)
-    manufacturer=models.EmailField(blank=True)
-    instock=models.IntegerField(default=0)
+    name = models.CharField(max_length=200)
+    price = models.IntegerField()
+    img1 = models.ImageField(null=True,blank=True)
+    img2 = models.ImageField(null=True,blank=True)
+    img3 = models.ImageField(null=True,blank=True)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE,default=1)
+    desc = models.CharField(max_length=500,default='',null=True,blank=True)
+    manufacturer = models.EmailField(blank=True)
+    instock = models.IntegerField(default=0)
     
     @staticmethod
     def get_all_products():
@@ -74,6 +73,7 @@ class Customer(models.Model):
     name=models.CharField(max_length=50)
     phone=models.CharField(max_length=15)
     email=models.EmailField()
+    username=models.CharField(max_length=50,blank=True)
     password=models.CharField(max_length=500)
     address=models.CharField(max_length=500)
     
@@ -101,7 +101,7 @@ class Customer(models.Model):
         
 
 class Order(models.Model):
-    product=models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     customer=models.ForeignKey(Customer, on_delete=models.CASCADE)
     quantity=models.IntegerField(default=1)
     price=models.IntegerField()
@@ -120,11 +120,47 @@ class Order(models.Model):
 
 
 class UserOrder(models.Model):
-    customer=models.ForeignKey(Customer,on_delete=models.CASCADE,default=1)
-    productName=models.CharField(max_length=100)
+    customer=models.ForeignKey(Customer,on_delete=models.CASCADE)
+    productName=models.CharField(max_length=100,blank=True)
+    productimg=models.ImageField(null=True,blank=True)
     quantity=models.IntegerField(default=1)
     price=models.IntegerField()
     order_date=models.DateField(default=datetime.datetime.today)
    
     def UserPlaceOrder(self):
         self.save()
+
+    def get_all_order():
+        return UserOrder.objects.all()
+
+
+class Admin(models.Model):
+    name=models.CharField(max_length=50)
+    phone=models.CharField(max_length=15)
+    email=models.EmailField()
+    gst=models.CharField(max_length=20,blank=True)
+    password=models.CharField(max_length=500)
+    address=models.CharField(max_length=500)
+    pan=models.CharField(max_length=20,blank=True)
+    
+    def register(self):
+        self.save()
+
+    def isExists(self):
+        if Admin.objects.filter(email=self.email):
+            return True
+        else:
+            return False
+
+
+    @staticmethod
+    def get_admin_by_email(email):
+        try:
+            return Admin.objects.get(email=email) # return one object only
+        except:
+            return False
+
+    
+    @staticmethod
+    def get_by_id(c_id):
+            return Admin.objects.filter(id=c_id) # return one object only
