@@ -24,4 +24,6 @@ urlpatterns = [
     path('show_product/', views.ShowProduct,name='show'),
     path('login/', views.login,name='login'),
     path('register/', views.register ,name='register'),
+    path('admin_area/', views.admin_area ,name='admin_area'),
+
 ]

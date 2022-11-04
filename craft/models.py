@@ -68,14 +68,14 @@ class Product(models.Model):
     def get_all_products_of_admin(mail):
         return Product.objects.filter(manufacturer=mail) # return one object only
 
-
+# User Model / Customer Model
 class Customer(models.Model):
-    name=models.CharField(max_length=50)
-    phone=models.CharField(max_length=15)
-    email=models.EmailField()
-    username=models.CharField(max_length=50,blank=True)
-    password=models.CharField(max_length=500)
-    address=models.CharField(max_length=500)
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    username = models.CharField(max_length=50,blank=True)
+    password = models.CharField(max_length=500)
+    address = models.CharField(max_length=500)
     
     def register(self):
         self.save()
@@ -86,14 +86,12 @@ class Customer(models.Model):
         else:
             return False
 
-
     @staticmethod
     def get_user_by_email(email):
         try:
             return Customer.objects.get(email=email) # return one object only
         except:
             return False
-
     
     @staticmethod
     def get_by_id(c_id):
@@ -102,14 +100,14 @@ class Customer(models.Model):
 
 class Order(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    customer=models.ForeignKey(Customer, on_delete=models.CASCADE)
-    quantity=models.IntegerField(default=1)
-    price=models.IntegerField()
-    date=models.DateField(default=datetime.datetime.today)
-    address=models.CharField(max_length=100,default='',blank=True)
-    phone=models.CharField(max_length=15,default='',blank=True)
-    paymentMethod=models.CharField(max_length=15,default='',blank=True)
-    manufacturer=models.EmailField(blank=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    price = models.IntegerField()
+    date = models.DateField(default=datetime.datetime.today)
+    address = models.CharField(max_length=100,default='',blank=True)
+    phone = models.CharField(max_length=15,default='',blank=True)
+    paymentMethod = models.CharField(max_length=15,default='',blank=True)
+    manufacturer = models.EmailField(blank=True)
 
     def saveOrder(self):
         self.save()
@@ -120,12 +118,12 @@ class Order(models.Model):
 
 
 class UserOrder(models.Model):
-    customer=models.ForeignKey(Customer,on_delete=models.CASCADE)
-    productName=models.CharField(max_length=100,blank=True)
-    productimg=models.ImageField(null=True,blank=True)
-    quantity=models.IntegerField(default=1)
-    price=models.IntegerField()
-    order_date=models.DateField(default=datetime.datetime.today)
+    customer = models.ForeignKey(Customer,on_delete=models.CASCADE)
+    productName = models.CharField(max_length=100,blank=True)
+    productimg = models.ImageField(null=True,blank=True)
+    quantity = models.IntegerField(default=1)
+    price = models.IntegerField()
+    order_date = models.DateField(default=datetime.datetime.today)
    
     def UserPlaceOrder(self):
         self.save()
@@ -135,13 +133,13 @@ class UserOrder(models.Model):
 
 
 class Admin(models.Model):
-    name=models.CharField(max_length=50)
-    phone=models.CharField(max_length=15)
-    email=models.EmailField()
-    gst=models.CharField(max_length=20,blank=True)
-    password=models.CharField(max_length=500)
-    address=models.CharField(max_length=500)
-    pan=models.CharField(max_length=20,blank=True)
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    gst = models.CharField(max_length=20,blank=True)
+    password = models.CharField(max_length=500)
+    address = models.CharField(max_length=500)
+    pan = models.CharField(max_length=20,blank=True)
     
     def register(self):
         self.save()
