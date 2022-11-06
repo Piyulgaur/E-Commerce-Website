@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body{
+   background-color:rgb(230, 227, 227);
+}
+.parent_product{
+  padding: 2vw;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+.parent_product .product-card {
+    display: block;
+    width: 20vw;
+    border-radius: 25px;
+    padding: 20px 30px 30px 30px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    overflow: hidden;
+    margin: 3vh;
+
+  }
+  .parent_product .product-card:hover{
+    transform: scale(1.05);
+  }
+  .product-card .main-images{
+    width: 100%;
+    height: 30vh;
+  }
+  .product-card .main-images img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .product-card .main-images img.active{
+    opacity: 1;
+  }
+  .product-card .product-details .product_name{
+    font-size: 25px;
+    font-weight: 500;
+    color: #161616;
+    font-weight: bold;
+    
+  }
+  .product_name a{
+     padding-top: 2vh;
+    text-decoration: none;
+    color:#161616;
+  }
+
+  .product-card .product-details p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    text-align: justify;
+  }
+  .product-card .product-details .stars i{
+    margin: 0 -1px;
+    color: #333;
+  }
+  .product-card .color-price .color-option{
+    display: flex;
+    align-items: center;
+  }
+  .color-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .color-price .color-option .color{
+    font-size: 25px;
+    font-weight: 600;
+    color: #707070;
+    margin-right: 8px;
+  }
+  .color-price .price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .color-price .price .price_num{
+    font-size: 25px;
+    font-weight: 600;
+    color: #707070;
+  }
+  .product-card .button{
+    position: relative;
+    height: 7vh;
+    width: 100%;
+    border-radius: 25px;
+    margin-top: 4vh;
+    overflow: hidden;
+  }
+  .product-card .button:hover{
+    transform: scale(1.2);
+  }
+  .product-card .button .button-layer{
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    background-image: linear-gradient(135deg,#9708CC, #43CBFF,#9708CC, #43CBFF );
+    transition: all 0.4s ease;
+    border-radius: 25PX;
+  }
+  .product-card .button:hover .button-layer{
+    left: 0;
+      
+  }
+  .product-card .button button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+  }

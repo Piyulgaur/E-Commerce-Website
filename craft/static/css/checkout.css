@@ -1,0 +1,189 @@
+html{
+    font-size: 62.5%;
+}
+.address-card{
+    margin-left: 15vw;
+    margin-top: 5vh;
+}
+.address-card .address-top p{
+   font-size: 2rem;
+   font-weight: bold;
+}
+.address-card .address-bottom{
+    background-color:#1b1b1b;
+    padding-top: 2vh;
+    padding-left: 2vw;
+    width: 60vw;
+    height: 15vh;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.address-card .address-bottom p{
+     font-size: 2rem;
+     font-family: cursive;
+     color: white;
+}
+.payment-method{
+    margin-left: 15vw;
+    margin-top: 5vh;
+}
+.payment-method .payment-top p{
+    font-size: 2rem;
+    font-weight: bold;
+ }
+ .payment-method{
+    margin-left: 15vw;
+    margin-top: 5vh;
+}
+.payment-bottom{
+    background-color:transparent;
+    padding-top: 0vh;
+    padding-bottom: 2vh;
+    width: 60vw;
+    height: auto;
+    border-radius: 25px;
+
+}
+form{
+    width: 20vw;
+    background-color:transparent;
+}
+.payment-bottom .method1{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 1vh;
+    border-radius: 10px;
+    height: 6vh;
+    padding-top: 1vh;
+  
+}
+
+.method1 lebel{
+    width: 20vw;
+    font-size: 1.5rem;
+}
+#item-description{
+    width: 60vw;
+    margin-left: 15vw;
+    margin-top: 1vh;
+    padding-bottom: 0;
+    height: 50vh;
+}
+.item-top p{
+    margin-top: 3vh;
+    margin-left: 15vw;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.form-btn{
+    display: flex;
+    flex-direction: row;
+}
+.form-btn a{
+    width: 15vw;
+    height: 7vh;
+    background-color: #1b1b1b;
+    color: white;
+    border-radius:20px ;
+    padding-top: 1rem;
+    margin-left: 45vw;
+    margin-top: 6vh;
+
+}
+.form-btn a:hover{
+    background-color: white;
+    color: #1b1b1b;
+    border: solid black 2px;
+}
+#order-button{
+    height: 7vh;
+    width: 20vw;
+    margin-top: 6vh;
+    margin-left: 30vw;
+}
+#order-button:hover{
+    background-color: white;
+    color: #1b1b1b;
+    border: solid black 2px;
+
+}
+
+@media(max-width:500px){
+    html{
+        font-size: 50.2%;
+    }
+    .address-card{
+        margin-left: 10vw;
+        margin-top: 5vh;
+    }
+    .address-card .address-top p{
+        margin-left: 4vw;
+       font-size: 2rem;
+       font-weight: bold;
+    }
+    .address-card .address-bottom{
+        background-color:#1b1b1b;
+        padding-top: 1vh;
+        padding-left: 2vw;
+        width: 75vw;
+        height: 15vh;
+        border: 2px solid black;
+        border-radius: 25px;
+    }
+    .address-card .address-bottom p{
+         font-size: 2rem;
+         font-family: cursive;
+         color: white;
+    }
+     .payment-method{
+        margin-left: 15vw;
+        margin-top: 5vh;
+    }
+    
+    form{
+        width: auto;
+        background-color:transparent;
+    }
+    .payment-bottom .method1{
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        margin: 1vh;
+        border-radius: 10px;
+        height: 6vh;
+        padding-top: 2vh;
+        margin-left: 0vw;
+      
+    }
+    
+    .method1 lebel{
+        width: 60vw;
+        font-size: 1.5rem;
+    }
+    #item-description{
+        width: 75vw;
+        margin-left: 10vw;
+        margin-top: 1vh;
+        padding-bottom: 0;
+        height: 40vh;
+    }
+    
+    .form-btn a{
+        width: 30vw;
+        height: 5vh;
+        background-color: #1b1b1b;
+        color: white;
+        border-radius:20px ;
+        padding-top: 1rem;
+        margin-left: 10vw;
+        margin-top: 6vh;
+    
+    }
+    #order-button{
+        height: 5vh;
+        width: 30vw;
+        margin-top: 6vh;
+        margin-left: 30vw;
+    }
+  }

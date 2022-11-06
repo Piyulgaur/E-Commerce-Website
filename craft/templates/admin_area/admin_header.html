@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +17,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <!-- CSS Link -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_css/admin_style.css' %}">
     <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
     <link rel="stylesheet" href="{% static 'css/slideShow.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_css/admin_product.css' %}">
+
 
     <!-- Sancreek Font link -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sancreek">
@@ -33,21 +37,20 @@
 <body>  
     <header class="header">
         <nav class="navbar sticky">
-          <span class="logo" style=" font-family: Sancreek "><a href="">CrafterOni</a></span>
+          <span class="logo" style=" font-family: Sancreek "><a href="/admin_login">CrafterOni <small style="font-size: 15px">: Admin Portal</small></a></span>
           
           <ul class="nav_links">
             
-            <li>
-              <form class="search" action="">
-                <input type="search" placeholder="Search here..." required>
-                <button type="submit">Search</button>
-              </form>   
-            </li>
-            <li id="hp"><a href="/">Home</a></li>
-            <li id="hp"><a href="/products">Products</a></li>
-            <li id="hp"><a href="/login">Login</a></li>
-            <li><a class="" href="#"> <i class="fa-solid fa-bag-shopping fa-xl"></i> </a></li>
-            <li><a class="" href="#"> <i class="fa-solid fa-user fa-xl"></i> </a></li>
+            
+            {% comment %} <li id="hp"><a href="/">Home</a></li> {% endcomment %}
+            <li id="hp"><a  href="/admin_product">Products</a></li>
+            <li id="hp"><a  href="/admin_order">Orders</a></li>
+            {% if request.session.admin_email %}
+            <li id="hp"><a  href="/logout">Logout </a></li>
+            {% else %}
+            <li id="hp"><a  href="/login">Login</a></li>
+            {% endif %}
+            <li id=""><a  href="/admin_profile"> <i class="fa-solid fa-user fa-xl"></i> </a></li>
           
           </ul>
 

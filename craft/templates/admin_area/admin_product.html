@@ -1,0 +1,71 @@
+{% include './admin_header.html' %}
+
+<div class="table-div">
+    <div class='table-top'> <p>Your Products :</p></div>
+    <table id="products">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>In Stock</th>
+          <th>edit</th>
+          <th>Delete</th>
+        </tr>
+        {% for prd in products %}
+        <tr>
+          <td>{{prd.name}}</td>
+          <td>{{prd.price}}</td>
+          <td>{{prd.instock}}</td>
+          <td><a href="/edit_product/?prod_id={{prd.id}}" >
+            <span class="material-symbols-outlined">
+            edit
+            </span></a></td>
+          <td>
+            <a href="/delete_product/?prod_id={{prd.id}}" >
+            <span class="material-symbols-outlined">
+            delete
+            </span></a></td>
+        </tr>
+        {% endfor %}
+      </table>
+</div>
+
+<center> <a href="/add_product/"><div class="add_button">
+   Add Product
+</div></a></center>
+
+<div class="table-div">
+    <div class='table-top'> <p> Products Categories :</p></div>
+    <table id="products">
+        <tr>
+          <th>Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        {% for cat in categories %}
+        <tr>
+          <td>{{cat.name}}</td>
+          <td><a href="/edit_category/?cat_id={{cat.id}}" >
+            <span class="material-symbols-outlined">
+            edit
+            </span></a>
+          </td>
+        
+          <td>
+            <a href="/delete_category/?cat_id={{cat.id}}" >
+              <span class="material-symbols-outlined">
+              delete
+              </span></a></td>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+</div>
+
+<center><a href="/add_category/"> <div class="add_button">
+   Add Category
+</div></a></center>
+
+{% include "footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% include "header.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+  
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign Up </h2>
+  
+      <!-- Login Form -->
+      <form action="/registration/" method="POST" onsubmit=" return validate()">
+        {% csrf_token %}
+        <h2 style="color:red">{{error}}<h2>
+        
+      <div><label for="name">Full Name</label></div>
+        <input type="text" id="name" class="fadeIn second" name="name" placeholder="Enter Full Name" required>
+
+        <div><label for="phone_number">Phone Number</label> </div>
+        <input type="text" id="phone_number" class="fadeIn second" name="phone_number" placeholder="Enter Phone Number" required>
+        
+        <div><label for="email_address">Email</label></div>
+        <input type="email" id="email_address" class="fadeIn second" name="email" placeholder="Enter Email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" class="fadeIn second" name="pass" placeholder="Enter Password" required>
+        {% comment %} <input type="text" id="email" class="fadeIn second" name="email" placeholder="Confirm Password"> {% endcomment %}
+
+        <div><label for="street_address">Address</label></div>
+        <input type="textarea" id="street_address" class="fadeIn third" name="address" placeholder="Address">
+
+        <div><label for="pincode">Pincode</label></div>
+        <input type="text" id="pincode" class="fadeIn third" name="pin" placeholder="Pincode" required>
+
+        <input type="submit" class="fadeIn fourth" value="Register">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="/login">Already a Member? Login</a>
+      </div>
+
+      <!-- admin login-->
+      <div id="formFooter">
+        <a class="underlineHover" href="/admin_login" style="color: #92badd">&#8226 ADMIN PORTAL &#8226</a>
+      </div>
+  
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+{% include "footer.html" %}

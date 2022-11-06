@@ -10,7 +10,7 @@ html,body
 }
 
 body{
-  background-image: linear-gradient(#E0C4FD, #8FC6FD);
+  background-image: linear-gradient(#5e1ca4, #ec2f04);
   /* background-color: rgb(215, 202, 185); */
 }
 
@@ -26,7 +26,7 @@ nav{
 }
 
 .logo a{
-  color: #d739fe;
+  color: #92BADD;
 }
 
 .navbar{
@@ -38,8 +38,8 @@ nav{
   padding-right: 125px;
   padding-top: 15px;
   padding-bottom: 10px;
+  
 }
-
 
 nav ul{
   display: inline-block;

@@ -14,16 +14,46 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from craft import views
+from django.urls import path,include
+from craft.views import  cart,profile, index, registration,editAccount,checkout,logout,deleteCart,myOrder
+from craft.views import product_desc, saveOrder,shop,login,deleteOrder,compare
+from craftAdmins.views import adminLogin,adminProduct,deleteCat,confirmDelivery ,addCategory ,editCategory ,addProduct,editProduct
+from craftAdmins.views import adminRegister,adminProfile,editAdminAccount,deleteProduct,adminOrder
+from . import settings
+from django.conf.urls.static import static
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homePage),
-    path('products/', views.products),
-    path('show_product/', views.ShowProduct,name='show'),
-    path('login/', views.login,name='login'),
-    path('register/', views.register ,name='register'),
-    path('admin_area/', views.admin_area ,name='admin_area'),
+    path('', index,name='homepage'),
+    path('product/',product_desc),
+    path('registration/',registration),
+    path('login/',login,name='login'),
+    path('logout/',logout),
+    path('shop/',shop,name='shop'),
+    path('order/',myOrder,name='order'),
+    path('compare/',compare),
+    path('delete_cart/',deleteCart),
+    path('delete_order/',deleteOrder),
+    path('cart/',cart,name='cart'),
+    path('delivered/',confirmDelivery),
+    path('profile/',profile,name='profile'),
+    path('edit/',editAccount,name='edit'),
+    path('checkout/',checkout),
+    path('place_order/',saveOrder),
+    path('admin_login/',adminLogin,name='adminLogin'),
+    path('admin_register/',adminRegister),
+    path('admin_profile/',adminProfile,name='Adminprofile'),
+    path('edit_admin_profile/',editAdminAccount),
+    path('admin_order/',adminOrder,name='adminOrder'),
+    path('admin_product/',adminProduct,name='adminProduct'),
+    path('add_product/',addProduct),
+    path('add_category/',addCategory),
+    path('edit_category/',editCategory),
+    path('delete_product/',deleteProduct),
+    path('delete_category/',deleteCat),
+    path('edit_product/',editProduct,name='editProduct'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-]
+

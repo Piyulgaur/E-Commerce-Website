@@ -1,0 +1,134 @@
+/* this is css for profile page */
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: rgb(230, 227, 227);
+}
+/* this is css for main card  */
+
+.profile-card{
+    margin-top: 10vh;
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 50vw;
+    height: auto;
+    background: #fff;
+    backdrop-filter: blur(10px);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    color: black;
+    z-index: 1;
+}
+
+/* this is css p inside card */
+
+.profile-card p{
+text-align: center;
+color: black;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 3rem;
+font-weight: bold;
+line-height: 100%;
+}
+/* this is css for profile photo */
+
+#img2{
+    margin-top: 5%;
+    width: 15vw;
+    background-color: white;
+    border-radius: 5px;
+    
+}
+
+      
+.profile-card>div{
+    color: white;
+    text-align: left;
+    margin-left: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ /* this is css for rings in profile page */
+.detail p{
+    letter-spacing: 2px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+.detail{
+    margin-left: 0%;
+}
+
+
+.parent-button .child-button{
+   border:solid black 2px;
+   background-color: #1b1b1b;
+   width: 10vw;
+   height: 8vh;
+   cursor: pointer;
+	border-radius: 5px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+#one{
+    width: 15vw;
+    
+}
+#one p{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom:5rem;
+}
+
+
+
+@media(max-width:998px){
+    html{
+        font-size: 50%;
+    }
+}
+@media(max-width:768px){
+    html{
+        font-size: 40%;
+    }
+}
+@media(max-width:650px){
+    html{
+        font-size: 35%;
+    }
+}
+@media(max-width:500px){
+    html{
+        font-size: 30%;
+    }
+    .profile-card{
+        margin-top: 10vh;
+        border: 1px solid white;
+        border-radius: 15px;
+        width: 80vw;
+        height: auto;
+        background:white;
+        backdrop-filter: blur(10px);
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        color: black;
+        z-index: 1;
+    }
+    .parent-button .child-button{
+        
+        width: 30vw;
+        
+     }
+    
+    
+    .edit-form{
+        padding-top: 0;
+        margin-top: 0;
+        width: 70vw;
+    }
+}

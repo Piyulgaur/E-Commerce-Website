@@ -1,0 +1,31 @@
+.shop-body
+{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+.left{
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 15%;
+    margin-top: 5vh;
+    justify-content: left;
+}
+
+.left .cat-box  p{
+    margin: 0px;
+    height: 8vh;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid black;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-left: 2vw;
+    padding-top: 2vh;
+}
+.right{
+    display: flex;
+    justify-content: right;
+    width: 85%;
+    flex-wrap: wrap;
+}

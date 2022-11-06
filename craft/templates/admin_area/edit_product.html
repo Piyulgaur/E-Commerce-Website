@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/admin_css/navbar.css">
+
+    <link rel="stylesheet" href="/static/css/admin_css/add_product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+   
+      
+    </head>
+  <body >
+
+        <!--------------------navbar start here-------------------------------------->
+
+        <nav >
+          <div class="logo"> <a href='/admin_product'>Artistaan</a></div>
+          <input type="checkbox" id="click">
+          <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <ul>
+            {% if request.session.admin_email %}
+            <li><a href="/logout">Logout </a></li>
+            {% else %}
+            <li><a  href="/admin_login">Login</a></li>
+            {% endif %}
+            <li><a  href="/admin_product">Products</a></li>
+            <li><a  href="/admin_profile">Profile</a></li>
+            
+            <li><a href="/admin_order">Orders</a></li>
+            
+          </ul>
+        </nav>
+     <!--------------------navbar ends here-------------------------------------->
+
+
+
+
+<center><h1>Edit Products</h1></center>
+<div class="outer-form">
+  {% for prd in products %}
+<center><form action="/edit_product/?prod_id={{prd.id}}" method="POST" onsubmit=" return validatePrice()" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="form-div">
+    <label for="p_name"> Name :</label>
+        <input type="text" name="p_name" id="p_name" placeholder="Product Name" value="{{prd.name}}"><br>
+       
+      </div>
+    
+    <div class="form-div">
+    <label for="category">Category :</label>
+    
+    <select name="category" id="cat" placeholder="Select category">
+        {% for cat in Allcat %}
+        <option value="{{cat.id}}"> {{cat.name}}</option>
+        {% endfor %}
+    </select> 
+    <br>
+   
+ 
+    </div>
+
+    <div class="form-div">
+    <label for="price">Price :</label>
+    <input type="text" name="price" id="price" placeholder="Enter Price" value={{prd.price}}><br>
+    </div>
+
+    <div class="form-div">
+        <label for="instock">In stock :</label>
+        <input type="text" name="instock" id="instock" placeholder="No. of items" value={{prd.instock}}><br>
+    </div>
+
+    <div class="form-div">
+     <label for="image1">Image 1 : </label>
+     <h3>{{prd.img1}}</h3>
+     <input type="file" name="image1" ><br>
+    </div>
+
+    <div class="form-div">
+     <label for="image2">Image 2 : </label>
+     <h3>{{prd.img2}}</h3>
+     <input type="file" name="image2"> <br>
+    </div>
+
+
+    <div class="form-div">
+     <label for="image3">Image 3 : </label>
+     <h3>{{prd.img3}}</h3>
+     <input type="file" name="image3" > <br>
+    </div>
+
+     <div class="form-div">
+     <label for="description">Description : </label> <br>
+     <textarea name="description" id="desc" cols="30" rows="4">{{prd.desc}}</textarea> 
+    </div>
+   
+    <button type="submit" id="btn">Save Product</button>
+
+</form>  </center>
+{% endfor %}
+</div>
+
+<script src="../static/js/price_validate.js"></script>
+
+</body>
+</html>

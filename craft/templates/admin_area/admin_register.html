@@ -1,0 +1,56 @@
+{% include "admin_area/admin_header.html" %}
+{% load static %}
+
+   <!--------------------navbar ends here-------------------------------------->
+    
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign Up </h2>
+  
+      <!-- Login Form -->
+      <form action="/admin_register/" method="POST" onsubmit=" return validateAdmin()">
+        {% csrf_token %}
+        <h2 style="color:red">{{error}}<h2>
+        
+      <div><label for="name">Full Name</label></div>
+        <input type="text" id="name" class="fadeIn second" name="name" placeholder="Enter Full Name" required>
+
+        <div><label for="phone_number">Phone Number</label> </div>
+        <input type="text" id="phone_number" class="fadeIn second" name="phone_number" placeholder="Enter Phone Number" required>
+        
+        <div><label for="email_address">Email</label></div>
+        <input type="email" id="email_address" class="fadeIn second" name="email" placeholder="Enter Email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" class="fadeIn second" name="pass" placeholder="Enter Password" required>
+        {% comment %} <input type="text" id="email" class="fadeIn second" name="email" placeholder="Confirm Password"> {% endcomment %}
+
+        <div>
+          <label for="gst">GSTIN No.</label></div>
+          <input type="text" id="gst" class="fadeIn second" name="gst" placeholder="GSTIN" required>
+        
+
+        <div><label for="street_address">Address</label></div>
+        <input type="textarea" id="street_address" class="fadeIn third" name="address" placeholder="Address">
+
+        
+
+        <input type="submit" class="fadeIn fourth" value="Register">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="/admin_login">Already a Member? Login</a>
+      </div>
+
+      <!-- admin login-->
+      <div id="formFooter">
+        <a class="underlineHover" href="/login" style="color: #92badd"> Sign In as a USER </a>
+      </div>
+      
+  
+    </div>
+  </div>
+</body>
+</html>

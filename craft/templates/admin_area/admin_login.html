@@ -1,0 +1,47 @@
+{% include "admin_area/admin_header.html" %}
+{% load static %}
+
+
+{% comment %} body starts {% endcomment %}
+<body>  
+    
+  
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+  
+      <!-- Login Form -->
+      <form action="/admin_login/" method="POST">
+        {% csrf_token %}
+        <h2 style="color:red">{{error1}}<h2>
+
+        <div><label for="email">Email</label></div>
+        <input type="email" id="email_address" class="fadeIn second" name="email" placeholder="email">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="/admin_register">Didn't Sign Up yet? Register Now</a>
+      </div>
+  
+      <!-- admin login-->
+      <div id="formFooter">
+        <a class="underlineHover" href="/login" style="color: #92badd"> Sign In as a USER </a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+{% include "footer.html" %}
+
+

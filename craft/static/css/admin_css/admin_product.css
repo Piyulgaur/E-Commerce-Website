@@ -1,0 +1,82 @@
+html{
+    font-size: 62.5%;
+}
+.table-div{
+    width: 90vw;
+    height: auto;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+.table-div .table-top{
+    margin-top: 5vh;
+}
+.table-div .table-top p{
+    margin-top: 5vh;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+#products {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #products td, #products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 1.5rem;
+  }
+  
+  #products tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #products tr:hover {background-color: #ddd;}
+  
+  #products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0F5298;
+    color: white;
+  }
+
+  .add_button{
+    width: 15vw;
+    height: 7vh;
+    border: solid black 2px;
+    padding: 2px;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    background-color: #0F5298;
+    color: #fff;
+    border-radius: 20px;
+  }
+  
+  .add_button a{
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+  
+  .add_button:hover{
+    transform: scale(1.2);
+    background-color: #fff;
+    color: #0F5298;
+    border: solid #0F5298 2px;
+  }
+  .add_button a:hover{
+    color: #0F5298;
+    font-size: 2rem;
+  
+  }
+  
+
+  
+
+
+
+
+  @media screen and (max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+  }

@@ -1,4 +1,5 @@
 {% include "header.html" %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,26 +9,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
   <link rel="stylesheet" href="../static/css/login.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
   
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
+      <div>
       <h2 class="active"> Sign In </h2>
-  
+      
+        
       <!-- Login Form -->
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <form action="/login/" method="POST">
+        {% csrf_token %}
+        <h2 style="color:red">{{error1}}<h2>
+
+        <div><label for="email_address">Email</label></div>
+        <input type="email" id="email_address" class="fadeIn second" name="email" placeholder="enter your email">
+
+        <label for="password">Passowrd</label>
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+        
         <input type="submit" class="fadeIn fourth" value="Log In">
-      </form>
+        </form>
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="/register">Didn't Sign Up yet? Register Now</a>
+        <a class="underlineHover" href="/registration">Didn't Sign Up yet? Register Now</a>
       </div>
   
+      <!-- admin login-->
+      <div id="formFooter">
+        <a class="underlineHover" href="/admin_login" style="color: #92badd">&#8226 ADMIN PORTAL &#8226</a>
+      </div>
+    </div>
     </div>
   </div>
 
