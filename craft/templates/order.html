@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+
+{% load cart %}
+<div class="wrapper">
+    <h1>My Orders</h1>
+
+    
+    <div class="project">
+        
+        <div class="shop">
+            {% for item in order %}
+            <div class="box" style="height:30vh">
+                <img src="{{item.productimg.url}}">
+                <div class="content">
+                    <h3>{{item.productName}}</h3>
+                    <h4>Price: ₹ {{item.price}}</h4>
+                    <h4>Order Date:  {{item.order_date}}</h4>
+    
+                    <p class="unit">Quantity: <input name="" value="{{item.quantity}}"></p>
+                    <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i><span class="btn2" ><a href='/delete_order/?pid={{item.id}}' id="remove" > Cancel Order </a></span></p>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+       
+       
+     
+    </div>
+</div>
+</body>
+</html>

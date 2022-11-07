@@ -1,61 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/static/css/admin_css/navbar.css">
-
-    <link rel="stylesheet" href="/static/css/admin_css/add_product.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-
-    </head>
-  <body >
-        <!--------------------navbar start here-------------------------------------->
-
-        <nav >
-          <div class="logo"> <a href='/admin_product'>Artistaan</a></div>
-          <input type="checkbox" id="click">
-          <label for="click" class="menu-btn">
-            <i class="fas fa-bars"></i>
-          </label>
-          <ul>
-            {% if request.session.admin_email %}
-            <li><a href="/logout">Logout </a></li>
-            {% else %}
-            <li><a  href="/admin_login">Login</a></li>
-            {% endif %}
-            <li><a  href="/admin_product">Products</a></li>
-
-            <li><a  href="/admin_profile">Profile</a></li>
-            
-            <li><a href="/admin_order">Orders</a></li>
-            
-          </ul>
-        </nav>
-     <!--------------------navbar ends here-------------------------------------->
+{% include 'admin_area/admin_header.html' %}
 
 
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active" style="background-color:white">Edit Category</h2>
 
-
-<center><h1>Edit category</h1></center>
-<div class="outer-form">
+    <!-- add product Form -->
     {% for cat in category %}
-    <center><form action="/edit_category/?cat_id={{cat.id}}" method="POST" >
-    {% csrf_token %}
-    <div class="form-div">
-    <label for="c_name"> Name :</label>
-    <input type="text" name="c_name" id="c_name" placeholder="Category Name"  value="{{cat.name}}" ><br>
-    </div>
-    
-    <button type="submit" id="btn">Save</button>
-
-</form>
-</center>
-{% endfor %}
-
+    <form action="/edit_category/?cat_id={{cat.id}}" method="POST">
+      {% csrf_token %}
+      
+      <div><label for="c_name">Category Name:</label></div>
+      <input type="text" name="c_name" id="c_name" placeholder="Category Name"  value="{{cat.name}}" >
+      <br><br>
+      <input type="submit" class="fadeIn fourth" value="Save Category">
+      <br><br>
+      <div><br></div>
+    </form>
+    {% endfor %}
+  </div>
 </div>
+
 </body>
 </html>

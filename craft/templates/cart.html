@@ -1,0 +1,38 @@
+{% include 'header.html' %}
+{% load cart %}
+<div class="wrapper">
+    <h1>Shopping Cart</h1>
+
+
+    <div class="project">
+        
+        <div class="shop">
+            {% for item in carts %}
+            <div class="box">
+                <img src="{{item.img1.url}}">
+                <div class="content">
+                    <h3>{{item.name}}</h3>
+                    <h4>Price: ₹ {{item.price}}</h4>
+                    <p class="unit">Quantity: {{item|cart_quantity:request.session.cart}}</p>
+                    <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i><span class="btn2" ><a href='/delete_cart/?pid={{item.id}}' id="remove" > Remove </a></span></p>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    
+    
+       
+        <div class="right-bar">
+            <p><span>Subtotal</span> <span>₹ {{carts|total_price:request.session.cart}}</span></p>
+            <hr>
+            <p><span>Tax (0%)</span> <span>₹ 00</span></p>
+            <hr>
+            <p><span>Shipping</span> <span>Free</span></p>
+            <hr>
+            <p><span>Total</span> <span>₹ {{carts|total_price:request.session.cart}}</span></p><a href="/checkout"><i class="fa fa-shopping-cart"></i>Order</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

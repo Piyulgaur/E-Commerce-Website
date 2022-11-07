@@ -25,11 +25,9 @@ html{
     border: 1px solid #ddd;
     padding: 8px;
     font-size: 1.5rem;
+    background-color: #ddd;
   }
   
-  #products tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #products tr:hover {background-color: #ddd;}
   
   #products th {
     padding-top: 12px;

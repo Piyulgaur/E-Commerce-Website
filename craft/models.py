@@ -43,6 +43,9 @@ class UserOrder(models.Model):
     def UserPlaceOrder(self):
         self.save()
 
+    def getidOrder(id):
+        return UserOrder.objects.filter(customer=id)
+
     def get_all_order():
         return UserOrder.objects.all()
     

@@ -9,7 +9,7 @@
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
-      <h2 class="active"> Sign In </h2>
+      <h2 class="active" style="background-color:white;" > Sign In </h2>
   
       <!-- Login Form -->
       <form action="/admin_login/" method="POST">
@@ -17,10 +17,10 @@
         <h2 style="color:red">{{error1}}<h2>
 
         <div><label for="email">Email</label></div>
-        <input type="email" id="email_address" class="fadeIn second" name="email" placeholder="email">
+        <input type="email" id="email_address" class="fadeIn second" name="email" placeholder="email" required>
 
         <label for="password">Password</label>
-        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
 
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>

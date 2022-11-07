@@ -1,0 +1,175 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrafterOni</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slideShow.css' %}">
+    
+    
+    <link rel="stylesheet" href="{% static 'css/index_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product_desc.css' %}">
+
+    <!-- Sancreek Font link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sancreek">
+
+    <!-- JS Link -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/slideShow.js' %}"></script>
+    
+</head>
+
+{% comment %} body starts {% endcomment %}
+<body>  
+    <header class="header">
+        <nav class="navbar sticky">
+          <span class="logo" style="font-family: Sancreek;"><a href="/">CrafterOni</a></span>
+          
+          <ul class="nav_links" style="font-size:1.5rem;">
+            
+            {% comment %} <li>
+              <form class="search" action="">
+                <input type="search" placeholder="Search here..." required>
+                <button type="submit">Search</button>
+              </form>   
+            </li> {% endcomment %}
+            <li id="hp"><a href="/">Home</a></li>
+            <li id="hp"><a href="/shop">Products</a></li>
+            <li id="hp"><a href="/order">Orders</a></li>
+            {% if request.session.customer_email %}
+            <li id="hp"><a href="/logout">Logout </a></li>
+            {% else %}
+            <li id="hp"><a href="/login">Login</a></li>
+            {% endif %}
+            <li><a class="" href="/cart"> <i class="fa-solid fa-bag-shopping fa-xl"></i> </a></li>
+            <li><a class="" href="/profile"> <i class="fa-solid fa-user fa-xl"></i> </a></li>
+          
+          </ul>
+
+        </nav>
+    </header>
+
+
+   <br><br><br>
+    <div class = "card-wrapper">
+      <div class = "card">
+        <!-- card left -->
+        <div class = "product-imgs" >
+          <div class = "img-display" style="border: 1px black solid">
+            <div class = "img-showcase"  >
+              <img  src = {{products.img1.url}} alt = "shoe image">
+              <img  src = {{products.img2.url}} alt = "shoe image">
+              <img  src = {{products.img3.url}} alt = "shoe image">
+            </div>
+          </div>
+          <div class = "img-select" >
+            <div class = "img-item" style="border: 1px black solid">
+              <a href = "#" data-id = "1">
+                <img src = {{products.img1.url}} alt = " image1">
+              </a>
+            </div>
+            <div class = "img-item" style="border: 1px black solid">
+              <a href = "#" data-id = "2">
+                <img src = {{products.img2.url}} alt = " image2">
+              </a>
+            </div>
+            <div class = "img-item" style="border: 1px black solid">
+              <a href = "#" data-id = "3">
+                <img src = {{products.img3.url}} alt = " image3">
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- card right -->
+        <div class = "product-content">
+          <h2 class = "product-title">{{products.name}}</h2>
+          <div class = "product-rating">
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star-half-alt"></i>
+            <span>4.7(21)</span>
+          </div>
+
+          <div class = "product-price">
+            <p class = "product-price">Price: <span>Rs {{ products.price}}</span></p>
+          </div>
+
+          <br><br>
+          <div class = "product-detail">
+            <h2>about this item: </h2>
+            <p>{{ products.desc}}</p>
+            <ul>
+              <li>Available: <span>in stock</span></li>
+              <li>Category: <span>{{products.category}}</span></li>
+              <li>Shipping Area: <span>All over the world</span></li>
+              <li>Shipping Fee: <span>Free</span></li>
+            </ul>
+          </div>
+          <br><br>
+          <div class = "purchase-info">
+            <form method='POST' action='/product/'>
+              {% csrf_token %}
+            {% comment %} <label for="delivery-day">Select Date Of Delivery :</label>
+            <input type="date" id="dod" name="dateOfDelivery"> {% endcomment %}
+             
+            <input type = "number" min = "1" value = "1" name='quantity'>
+            <input hidden type = "text" value = "{{ products.id}}" name='product_id'>
+            <button type = "submit" class = "btn">
+              Add to Cart <i class = "fas fa-shopping-cart"></i>
+            </button>
+          </form>
+
+          <form method='POST' action='/compare/'>
+            {% csrf_token %}
+            <input hidden type = "text" value = "{{ products.id}}" name='p_id'>
+            <button type = "submit" class = "btn" style="background-color:#39ace7;">
+              Compare Item
+            </button>
+          </form>
+
+          </div>
+          
+
+          <div class = "social-links">
+            <p>Share At: </p>
+            <a href = "#">
+              <i class = "fab fa-facebook-f"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-twitter"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-instagram"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-whatsapp"></i>
+            </a>
+            <a href = "#">
+              <i class = "fab fa-pinterest"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="../static/js/index_page.js"></script>
+  </body>
+</html>

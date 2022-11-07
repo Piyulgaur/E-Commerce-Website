@@ -9,15 +9,15 @@
                     <form action="/edit_admin_profile/" method="POST" onsubmit=" return validateAdmin()" >
                         {% csrf_token %}
                         <h2 style="color:red">{{error}}<h2>
-                       Name: <input  type="text" placeholder="Name" name="name" value="{{  users.name}}" id="name" required/><br>
-                       Email <input  type="text" placeholder="Email" name="email" value="{{  users.email}}" id="email_address" required /><br>
-                        Password<input  type="text" placeholder="Enter Password" name="pass" id="password"   required/><br>
-                       Mobile  <input  type="text" placeholder="Mobile Number" name="phone" value="{{  users.phone}}" id="phone_number" required /><br>
+                        Name: <input  type="text" placeholder="Name" name="name" value="{{  users.name}}" id="name" required/><br>
+                        Email <input  type="text" placeholder="Email" name="email" value="{{  users.email}}" id="email_address" required /><br>
+                        <div> Password </div><input  type="text" placeholder="Enter Password" name="pass" id="password"   required/><br>
+                        Mobile  <input  type="text" placeholder="Mobile Number" name="phone" value="{{  users.phone}}" id="phone_number" required /><br>
                         GSTIN<input  type="text" placeholder="GSTIN " name="gst" value="{{  users.gst}}"  id="gst" required /><br>
                         Address<textarea  name="address" rows="3" cols="50" placeholder="Address" id="street_address" required>{{users.address}}" </textarea>
                         <br><br><button type="submit">Save</button>
                     </form>
-            
+                </center>
                 <br>
                 <br>
     </div>

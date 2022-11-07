@@ -1,4 +1,73 @@
-{% include 'header.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrafterOni</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Owl carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/product_style.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/shop.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/product_desc.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/cart.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/checkout.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/product_style.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/profile.css' %}"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/index_page.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+
+    <!-- Sancreek Font link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sancreek">
+
+    <!-- JS Link -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/slideShow.js' %}"></script>
+    
+</head>
+
+{% comment %} body starts {% endcomment %}
+<body>  
+    <header class="header">
+        <nav class="navbar sticky">
+          <span class="logo" style=" font-family: Sancreek "><a href="">CrafterOni</a></span>
+          
+          <ul class="nav_links">
+            
+            {% comment %} <li>
+              <form class="search" action="">
+                <input type="search" placeholder="Search here..." required>
+                <button type="submit">Search</button>
+              </form>   
+            </li> {% endcomment %}
+            <li id="hp"><a href="/">Home</a></li>
+            <li id="hp"><a href="/shop">Products</a></li>
+            <li id="hp"><a href="/order">Orders</a></li>
+            {% if request.session.customer_email %}
+            <li id="hp"><a href="/logout">Logout </a></li>
+            {% else %}
+            <li id="hp"><a href="/login">Login</a></li>
+            {% endif %}
+            <li><a class="" href="/cart"> <i class="fa-solid fa-bag-shopping fa-xl"></i> </a></li>
+            <li><a class="" href="/profile"> <i class="fa-solid fa-user fa-xl"></i> </a></li>
+          
+          </ul>
+
+        </nav>
+    </header>
 
 <div class='shop-body'>
     <div class='left'>
@@ -12,7 +81,8 @@
     <div class='right'>
         <div class='parent_product'>
           {% for prd in products  %}
-            <div class='product-card'>
+          <a href ='/product/?prod_id={{prd.id}}'>  
+          <div class='product-card'>
              <div class='main-images'>
              <a href='/product/?prod_id={{prd.id}}' ><img  class=' active' src="{{prd.img1.url}}"></a>
              </div>
@@ -44,7 +114,7 @@
              </div>
              
            </div>
-           
+           </a>
            {% endfor %}
          </div>
          

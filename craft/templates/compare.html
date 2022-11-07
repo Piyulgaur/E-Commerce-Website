@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+
+<div class='parent_product'>
+    
+    {% for prd in products  %}
+    <div class='product-card'>
+     <div class='main-images'>
+     <a href='/product/?prod_id={{prd.id}}' ><img  class=' active' src="{{prd.img1.url}}"></a>
+     </div>
+     <div class='product-details'>
+       <br>
+       <span class='product_name'><a href='/product/?prod_id={{prd.id}}' >{{ prd.name }}</a></span>
+       <div class='stars'>
+         
+         <i class='bx bxs-star' ></i>
+         <i class='bx bxs-star' ></i>
+         <i class='bx bxs-star' ></i>
+         <i class='bx bxs-star' ></i>
+         <i class='bx bx-star' ></i>
+       </div>
+     </div>
+     <div class='color-price'>
+       <div class='color-option'>
+         <span class='color'>Price:</span>
+       </div>
+       <div class='price'>
+         <span class='price_num'>{{ prd.price }}</span>
+       </div>
+     </div>
+     <div class='button'>
+       <div class='button-layer'></div>
+       
+       <a href ='/product/?prod_id={{prd.id}}'><button >View Item </button></a>
+       
+     </div>
+   </div>
+   
+   {% endfor %}
+ </div>

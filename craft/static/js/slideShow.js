@@ -32,8 +32,8 @@ var images = [];	// Images Array
 var time = 5000;	// Time Between Switch
 	 
 // Image List
-images[0] = "../static/img/offer1.jpg";
-images[1] = "../static/img/offer2.jpg";
+images[0] = "../static/img/offer2.jpg";
+images[1] = "../static/img/offer1.jpg";
 images[2] = "../static/img/offer3.jpg";
 
 // Change Image

@@ -1,104 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% include "admin_area/admin_header.html" %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/static/css/admin_css/navbar.css">
 
-    <link rel="stylesheet" href="/static/css/admin_css/add_product.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-   
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active" style="background-color:white">Add Products</h2>
+
+    <!-- add product Form -->
+    <form action="/add_product/" method="POST" onsubmit=" return validatePrice()"  enctype="multipart/form-data">
+      {% csrf_token %}
       
-    </head>
-  <body >
-    
-        <!--------------------navbar start here-------------------------------------->
+      <div><label for="product_name">Product Name:</label></div>
+      <input type="text" name="p_name" id="product_name" placeholder="Product Name" >
 
-        <nav >
-          <div class="logo"> <a href='/admin_product'>Artistaan</a></div>
-          <input type="checkbox" id="click">
-          <label for="click" class="menu-btn">
-            <i class="fas fa-bars"></i>
-          </label>
-          <ul>
-            {% if request.session.admin_email %}
-            <li><a href="/logout">Logout </a></li>
-            {% else %}
-            <li><a  href="/admin_login">Login</a></li>
-            {% endif %}
-            <li><a  href="/admin_product">Products</a></li>
-            <li><a  href="/admin_profile">Profile</a></li>
-            
-            <li><a href="/admin_order">Orders</a></li>
-            
-          </ul>
-        </nav>
-     <!--------------------navbar ends here-------------------------------------->
-
-
-
-
-<center><h1>Add Products</h1></center>
-<div class="outer-form">
-<center><form action="/add_product/" method="POST" onsubmit=" return validatePrice()"  enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-div">
-    <label for="p_name"> Name :</label>
-    <input type="text" name="p_name" id="product_name" placeholder="Product Name" ><br>
-    </div>
-    
-    <div class="form-div">
-    <label for="category">Category :</label>
-    
-    <select name="category" id="category" placeholder="Select category">
+     <div style=""> <label for="category">Category</label> </div>
+      <select name="category" id="category" placeholder="Select category">
         {% for cat in Allcat %}
         <option value="{{cat.id}}"> {{cat.name}}</option>
         {% endfor %}
-    </select> 
-    <br>
-   
- 
-    </div>
+      </select>
 
-    <div class="form-div">
-    <label for="price">Price :</label>
-    <input type="text" name="price" id="price" placeholder="Enter Price"><br>
-    </div>
+       <div><label for="price">Price :</label></div>
+      <input type="text" name="price" id="price" placeholder="Enter Price">
 
-    <div class="form-div">
-        <label for="instock">In stock :</label>
-        <input type="text" name="instock" id="instock" placeholder="No. of items"><br>
-    </div>
+      <div> <label for="instock">In stock :</label></div>
+      <input type="text" name="instock" id="instock" placeholder="No. of items"><br>
 
-    <div class="form-div">
-     <label for="image1">Image 1 : </label>
-     <input type="file" name="image1"> <br>
-    </div>
+      <div><label for="image1">Image 1 : </label></div>
+      <input type="file" name ="image1" required> <br>
 
-    <div class="form-div">
-     <label for="image2">Image 2 : </label>
-     <input type="file" name="image2"> <br>
-    </div>
+      <div> <label for="image2">Image 2 : </label></div>
+      <input type="file" name="image2" required> <br>
 
+      <div><label for="image3">Image 3 : </label></div>
+      <input type="file" name="image3" required> <br>
 
-    <div class="form-div">
-     <label for="image3">Image 3 : </label>
-     <input type="file" name="image3"> <br>
-    </div>
+      <div><label for="description">Description : </label> </div>
+      <textarea name="description" class="fadeIn second" id="desc" cols="30" rows="4"></textarea> 
 
-     <div class="form-div">
-     <label for="description">Description : </label> <br>
-     <textarea name="description" id="desc" cols="30" rows="4"></textarea> 
-    </div>
+      <input type="submit" class="fadeIn fourth" value="Save Product">
 
-    <button type="submit" id="btn">Save Product</button>
+      <div></div>
 
-</form>
-</center>
+    </form>
+
+  </div>
 </div>
+
+
 <script src="../static/js/price_validate.js"></script>
 
 </body>

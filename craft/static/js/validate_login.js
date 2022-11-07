@@ -3,10 +3,10 @@ function validate()
 {
   //validation for name 
   var fn=document.getElementById("name").value;
-  var reg1=/[a-zA-Z" "]{5,20}$/g;
+  var reg1=/[a-zA-Z" "]{3,20}$/g;
   if(!reg1.test(fn))
   {
-    alert(" Name must contain alphabet and length should be 5 to 20 character");
+    alert(" Name must contain alphabet and length should be 3 to 20 character");
     return false;
   }
   

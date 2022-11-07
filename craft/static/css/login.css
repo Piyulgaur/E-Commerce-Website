@@ -120,7 +120,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text],  input[type=email], input[type=password], input[type=textarea]{
+input[type=text],  input[type=email], input[type=password], input[type=textarea],select,textarea{
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -269,3 +269,5 @@ input[type=text]:placeholder, input[type=email]:placeholder, input[type=password
 * {
   box-sizing: border-box;
 }
+
+

@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+
+
+<section>
+    <!--------------------card for profile start here-------------------------------------->
+
+    <div class="profile-card">
+        <p>Your account</p>
+                <!--------------------user profile photo -------------------------------------->
+
+        <center><img src="/static/images/profile.png" alt="" id="img2" style ="margin-top:5%"></center>
+        <br>
+
+        <center><div class="detail">
+                <br>
+                <center><p> Name : {{users.name}}<br> </p> </center>
+                <center><p>Email : {{users.email}}<br> </p>  </center>
+                <center><p>Phone No : {{users.phone}}<br></P>  </center>
+                <center><p>Address : {{users.address}}<br><br></p> </center>
+        
+        </div>  </center>
+        
+
+    <div class='parent-button'>
+        <center> <a href="/edit">  
+            <div class='child-button' id='one'>
+            <center> <p>Edit Account</p> </center>
+        </div></a></center>
+    </div>
+
+        <br> 
+    </div>
+   
+</section>
+
+
+
+
+
+
+</body>
+</html>

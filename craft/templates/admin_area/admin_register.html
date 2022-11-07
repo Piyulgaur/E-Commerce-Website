@@ -6,7 +6,7 @@
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Tabs Titles -->
-      <h2 class="active"> Sign Up </h2>
+      <h2 class="active"  style="background-color:white;" > Sign Up </h2>
   
       <!-- Login Form -->
       <form action="/admin_register/" method="POST" onsubmit=" return validateAdmin()">
@@ -34,7 +34,7 @@
         <div><label for="street_address">Address</label></div>
         <input type="textarea" id="street_address" class="fadeIn third" name="address" placeholder="Address">
 
-        
+        <br><br>
 
         <input type="submit" class="fadeIn fourth" value="Register">
       </form>
@@ -52,5 +52,7 @@
   
     </div>
   </div>
+  <script src="{% static 'js/validate_admin.js' %}"></script>
+
 </body>
 </html>

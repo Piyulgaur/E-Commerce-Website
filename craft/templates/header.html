@@ -21,6 +21,13 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
     <link rel="stylesheet" href="{% static 'css/slideShow.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product_desc.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
 
     <!-- Sancreek Font link -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sancreek">
@@ -37,7 +44,7 @@
         <nav class="navbar sticky">
           <span class="logo" style=" font-family: Sancreek "><a href="">CrafterOni</a></span>
           
-          <ul class="nav_links">
+          <ul class="nav_links" style="font-size:1.5rem;">
             
             {% comment %} <li>
               <form class="search" action="">
@@ -47,14 +54,14 @@
             </li> {% endcomment %}
             <li id="hp"><a href="/">Home</a></li>
             <li id="hp"><a href="/shop">Products</a></li>
-            <li id="hp"><a href="">Orders</a></li>
+            <li id="hp"><a href="/order">Orders</a></li>
             {% if request.session.customer_email %}
             <li id="hp"><a href="/logout">Logout </a></li>
             {% else %}
             <li id="hp"><a href="/login">Login</a></li>
             {% endif %}
-            <li><a class="" href="#"> <i class="fa-solid fa-bag-shopping fa-xl"></i> </a></li>
-            <li><a class="" href="#"> <i class="fa-solid fa-user fa-xl"></i> </a></li>
+            <li><a class="" href="/cart"> <i class="fa-solid fa-bag-shopping fa-xl"></i> </a></li>
+            <li><a class="" href="/profile"> <i class="fa-solid fa-user fa-xl"></i> </a></li>
           
           </ul>
 

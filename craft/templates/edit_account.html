@@ -1,0 +1,29 @@
+{% include 'header.html' %}
+<section>
+    <!--------------------card for profile start here-------------------------------------->
+
+    <div class="profile-card">
+        <p>Edit account</p>
+                <!--------------------user profile photo -------------------------------------->
+               <center> 
+                    <form action="/edit/" method="POST" onsubmit=" return validate1()" >
+                        {% csrf_token %}
+                        <h2 style="color:red">{{error}}<h2>
+                        <input  type="text" placeholder="Name" name="name" value="{{  users.name}}" id="name" required/>
+                        <input  type="email" placeholder="Email" name="email" value="{{  users.email}}" id="email_address" required />
+                        <input  type="password" placeholder="Enter Password" name="pass"   required/>
+                        <input  type="text" placeholder="Mobile Number" name="phone" value="{{  users.phone}}" id="phone_number" required />
+                        <textarea  name="address" rows="3" cols="50" placeholder="Address" id="street_address" required>{{users.address}}"</textarea>
+                        <br><br><button type="submit">Save</button>
+                    </form>
+            
+                <br>
+                <br>
+    </div>
+   
+</section>
+
+<script src="../static/js/validate_edit.js"></script>
+
+</body>
+</html>

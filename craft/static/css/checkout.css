@@ -87,8 +87,8 @@ form{
     color: white;
     border-radius:20px ;
     padding-top: 1rem;
-    margin-left: 45vw;
-    margin-top: 6vh;
+    margin-left: 5vw;
+    margin-top: 5vh;
 
 }
 .form-btn a:hover{
@@ -100,7 +100,7 @@ form{
     height: 7vh;
     width: 20vw;
     margin-top: 6vh;
-    margin-left: 30vw;
+    margin-left: 45vw;
 }
 #order-button:hover{
     background-color: white;

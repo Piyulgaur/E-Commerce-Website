@@ -266,8 +266,8 @@ def saveOrder(request):
 
 def myOrder(request):
     if request.method=="GET" and request.session.get('customer_id'):
-
-        allorder=UserOrder.get_all_order()
+        cid=request.session.get('customer_id')
+        allorder=UserOrder.getidOrder(cid)
         return render(request,'order.html',{'order':allorder})
     else:
         return redirect('login')
@@ -282,3 +282,7 @@ def deleteOrder(request):
 def logout(request):
     request.session.clear()
     return redirect('login')
+
+def adminlogout(request):
+    request.session.clear()
+    return redirect('adminLogin')

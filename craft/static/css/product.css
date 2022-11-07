@@ -9,7 +9,7 @@ body{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
+  border: 2px solid black
 }
 .parent_product .product-card {
     display: block;
@@ -21,6 +21,7 @@ body{
     z-index: 3;
     overflow: hidden;
     margin: 3vh;
+    border: solid red 3px;
 
   }
   .parent_product .product-card:hover{
@@ -68,9 +69,8 @@ body{
     display: flex;
     align-items: center;
   }
-  .color-price{
+  .color-price {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: 10px;
   }
@@ -86,6 +86,7 @@ body{
     justify-content: center;
     align-items: center;
   }
+
   .color-price .price .price_num{
     font-size: 25px;
     font-weight: 600;
@@ -94,7 +95,7 @@ body{
   .product-card .button{
     position: relative;
     height: 7vh;
-    width: 100%;
+    width: 15vw;
     border-radius: 25px;
     margin-top: 4vh;
     overflow: hidden;

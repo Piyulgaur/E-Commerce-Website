@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from craft.views import  cart,profile, index, registration,editAccount,checkout,logout,deleteCart,myOrder
-from craft.views import product_desc, saveOrder,shop,login,deleteOrder,compare
+from craft.views import product_desc, saveOrder,shop,login,deleteOrder,compare,adminlogout
 from craftAdmins.views import adminLogin,adminProduct,deleteCat,confirmDelivery ,addCategory ,editCategory ,addProduct,editProduct
 from craftAdmins.views import adminRegister,adminProfile,editAdminAccount,deleteProduct,adminOrder
 from . import settings
@@ -41,6 +41,7 @@ urlpatterns = [
     path('profile/',profile,name='profile'),
     path('edit/',editAccount,name='edit'),
     path('checkout/',checkout),
+    path('adminLogout/',adminlogout),
     path('place_order/',saveOrder),
     path('admin_login/',adminLogin,name='adminLogin'),
     path('admin_register/',adminRegister),

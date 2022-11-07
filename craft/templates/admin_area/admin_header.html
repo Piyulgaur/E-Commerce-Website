@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{% static 'css/slideShow.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" href="{% static 'css/admin_css/admin_product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_css/admin_profile.css' %}">
+    
 
 
     <!-- Sancreek Font link -->
@@ -39,16 +41,16 @@
         <nav class="navbar sticky">
           <span class="logo" style=" font-family: Sancreek "><a href="/admin_login">CrafterOni <small style="font-size: 15px">: Admin Portal</small></a></span>
           
-          <ul class="nav_links">
+          <ul class="nav_links" style="font-size:1.5rem;">
             
             
             {% comment %} <li id="hp"><a href="/">Home</a></li> {% endcomment %}
-            <li id="hp"><a  href="/admin_product">Products</a></li>
+            <li id="hp"><a  href="/admin_product">Dashboard</a></li>
             <li id="hp"><a  href="/admin_order">Orders</a></li>
             {% if request.session.admin_email %}
-            <li id="hp"><a  href="/logout">Logout </a></li>
+            <li id="hp"><a  href="/adminLogout">Logout </a></li>
             {% else %}
-            <li id="hp"><a  href="/login">Login</a></li>
+            <li id="hp"><a  href="/admin_login">Login</a></li>
             {% endif %}
             <li id=""><a  href="/admin_profile"> <i class="fa-solid fa-user fa-xl"></i> </a></li>
           

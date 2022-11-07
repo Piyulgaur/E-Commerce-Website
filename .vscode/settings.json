@@ -1,3 +1,6 @@
 {
-    "intelephense.environment.documentRoot": "/templates/"
+    "intelephense.environment.documentRoot": "/templates/",
+    "livePreview.portNumber": 4000,
+    "fiveServer.port": 8000,
+    "fiveServer.host": "127.0.0.1"
 }
